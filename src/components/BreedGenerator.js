@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 
-export default class Generator extends Component {
+export default class BreedGenerator extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -13,7 +13,6 @@ export default class Generator extends Component {
       origin: '',
       pattern: ''
     }
-    // this.randomCat = this.randomCat.bind(this);
     this.handleClick = this.handleClick.bind(this);
 
 }
@@ -32,7 +31,6 @@ export default class Generator extends Component {
       country: catData.data[randomNumber].country,
       origin: catData.data[randomNumber].origin,
       pattern: catData.data[randomNumber].pattern,
-      loading: false
     })
     console.log(catData.data[randomNumber]); 
   }
@@ -49,10 +47,6 @@ export default class Generator extends Component {
       <div>
         <h1>hi from cat generator</h1>
         <button onClick={this.handleClick}>Click me</button>
-
-        {this.state.loading || !this.state.breed ? (
-          <div>Loading....</div>
-         ) : (
           <div> 
             <div> 
               <p>Breed: { this.state.breed }</p>
@@ -62,8 +56,7 @@ export default class Generator extends Component {
               <p>Pattern: { this.state.pattern }</p>
             </div>
           </div>
-          )}
-          </div>
+      </div>
     );
   }
 }
