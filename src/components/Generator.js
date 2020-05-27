@@ -6,7 +6,11 @@ export default class Generator extends Component {
     super(props)
     this.state = {
       loading: true,
-      breed: ''
+      breed: '',
+      coat: '',
+      country: '',
+      origin: '',
+      pattern: ''
     }
 }
 
@@ -14,42 +18,37 @@ export default class Generator extends Component {
     const url = 'https://catfact.ninja/breeds?limit=1';
     const response = await fetch(url);
     const data = await response.json();
-    this.setState({ breed: data.data[0].breed });
+    this.setState({ 
+      breed: data.data[0].breed,
+      coat: data.data[0].coat,
+      country: data.data[0].country,
+      origin: data.data[0].origin,
+      pattern: data.data[0].pattern,
+      loading: false
+    });
     console.log(data.data[0]);
-    
-
-
-
-    // axios.get('https://catfact.ninja/breeds?limit=1')
-    //   .then(response => {
-    //     this.setState({ breed: response.data.breed });
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-        
-    //   });
   }
 
   render() {
     return (
       <div>
-        <h1>hi from generator class</h1>
+        <h1>hi from cat generator</h1>
         <button onClick={this.handleClick}>Click me</button>
-        {this.state.loading ? <div>Loading....</div> : <div>breed...</div> }
-        <p>{ this.state.breed}</p>
-      </div>
-    )
+
+        {this.state.loading || !this.state.breed ? (
+          <div>Loading....</div>
+         ) : (
+          <div> 
+            <div> 
+              <p>{ this.state.breed }</p>
+              <p>{ this.state.coat }</p>
+              <p>{ this.state.country }</p>
+              <p>{ this.state.origin }</p>
+              <p>{ this.state.pattern }</p>
+            </div>
+          </div>
+          )}
+          </div>
+    );
   }
 }
-
-
-
-    // this.handleClick = this.handleClick.bind(this);
-  // }
-
-  // handleClick = event => {
-  //   event.preventDefault();
-
-  //   axios.get('https://catfact.ninja/breeds?limit=1')
-  //   .then(response => this.setState({ breed: response.data.breed })
-  //   )
