@@ -5,6 +5,7 @@ export default class Generator extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      catData: [],
       loading: true,
       breed: '',
       coat: '',
@@ -12,32 +13,36 @@ export default class Generator extends Component {
       origin: '',
       pattern: ''
     }
+    // this.randomCat = this.randomCat.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+
 }
 
-  async componentDidMount() {
-    // limit is how many breeds we want in our array
-    const limit = 100;
+  async handleClick() {
+    // limit is how many breeds we want in our array (up to 98 from the api)
+    const limit = 98;
     const url = `https://catfact.ninja/breeds?limit=${limit}`;
     const response = await fetch(url);
-    const data = await response.json();
+    const catData = await response.json();
     const randomNumber = Math.floor(Math.random() * limit);
     this.setState({ 
-      breed: data.data[randomNumber].breed,
-      coat: data.data[0].coat,
-      country: data.data[0].country,
-      origin: data.data[0].origin,
-      pattern: data.data[0].pattern,
+      catData: catData.data[randomNumber],
+      breed: catData.data[randomNumber].breed,
+      coat: catData.data[randomNumber].coat,
+      country: catData.data[randomNumber].country,
+      origin: catData.data[randomNumber].origin,
+      pattern: catData.data[randomNumber].pattern,
       loading: false
-    });
-    console.log(data.data[0]);
-    console.log(data.data);
-    
+    })
+    console.log(catData.data[randomNumber]); 
   }
 
-  // randomCat() {
-  //   console.log(this.state.data[randomNumber]);
+  componentDidCatch(error) {
+    console.log('error');
     
-  // }
+  }
+ 
+
 
   render() {
     return (
@@ -50,11 +55,11 @@ export default class Generator extends Component {
          ) : (
           <div> 
             <div> 
-              <p>{ this.state.breed }</p>
-              <p>{ this.state.coat }</p>
-              <p>{ this.state.country }</p>
-              <p>{ this.state.origin }</p>
-              <p>{ this.state.pattern }</p>
+              <p>Breed: { this.state.breed }</p>
+              <p>Coat: { this.state.coat }</p>
+              <p>Country: { this.state.country }</p>
+              <p>Origin: { this.state.origin }</p>
+              <p>Pattern: { this.state.pattern }</p>
             </div>
           </div>
           )}
