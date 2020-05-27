@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 export default class Generator extends Component {
   constructor(props) {
@@ -15,11 +15,14 @@ export default class Generator extends Component {
 }
 
   async componentDidMount() {
-    const url = 'https://catfact.ninja/breeds?limit=1';
+    // limit is how many breeds we want in our array
+    const limit = 100;
+    const url = `https://catfact.ninja/breeds?limit=${limit}`;
     const response = await fetch(url);
     const data = await response.json();
+    const randomNumber = Math.floor(Math.random() * limit);
     this.setState({ 
-      breed: data.data[0].breed,
+      breed: data.data[randomNumber].breed,
       coat: data.data[0].coat,
       country: data.data[0].country,
       origin: data.data[0].origin,
@@ -27,7 +30,14 @@ export default class Generator extends Component {
       loading: false
     });
     console.log(data.data[0]);
+    console.log(data.data);
+    
   }
+
+  // randomCat() {
+  //   console.log(this.state.data[randomNumber]);
+    
+  // }
 
   render() {
     return (
