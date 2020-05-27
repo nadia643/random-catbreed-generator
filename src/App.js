@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import RandomFruit from './components/generator';
+import Generator from './components/Generator';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Random Fruit Generator</h1>
-      <RandomFruit />
+      <Generator />
+      
     </div>
   );
 }
