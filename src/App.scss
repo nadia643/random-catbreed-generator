@@ -89,6 +89,7 @@ button {
   &:hover{
     background-color: #fff;
     color: $button-color;
+    cursor: pointer;
   }
 }
 
@@ -113,8 +114,9 @@ button {
 
 .section-home {
   position: relative;
-  width: 100%;
+  width: 95vw;
   height: 100vh;
+  margin: auto;
   display: flex;
   overflow: hidden;
 }
@@ -125,10 +127,13 @@ button {
   overflow: hidden;
 }
 
+
 .section-home div:nth-child(1) {
   position: relative;
   width: 50%;
   overflow: hidden;
+  background-image: url('./cat.jpg');
+  background-size: cover;
 }
 
 .section-home div:nth-child(1) h1 {
@@ -142,10 +147,9 @@ button {
   position: absolute;
   white-space: nowrap;
   font-size: 12em;
-  line-height: 80vh;
+  line-height: 1vh;
   color: #fff;
   animation: animate 60s linear infinite;
-
 }
 
 @keyframes animate {
@@ -153,7 +157,8 @@ button {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-300%);
   }
 
 }
+

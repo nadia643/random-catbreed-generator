@@ -30,7 +30,7 @@ export default class componentName extends Component {
       <div className="fact-generator">
         <button onClick={this.handleClick}>Click me for a fact</button>
         <p>{ this.state.fact }</p> <br /> <br /> <br /> <br />
-        <h7>"Oooooh, what an interesting fact. I have learnt so much" - Holly, Michigan</h7>
+        <h4>"Oooooh, what an interesting fact. I have learnt so much" - Holly, Michigan</h4>
       </div>
     )
   }

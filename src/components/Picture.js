@@ -23,9 +23,9 @@ export default class Picture extends Component {
 
   render() {
     return (
-      <div class="cat-page">
+      <div className="cat-page">
         <button onClick={this.handleClick}>Click me</button>
-        <img src={this.state.photo} alt=" " class="cat-photo" />
+        <img src={this.state.photo} alt=" " className="cat-photo" />
       </div>
     )
   }
