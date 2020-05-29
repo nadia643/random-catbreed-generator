@@ -44,11 +44,10 @@ export default class BreedGenerator extends Component {
 
   render() {
     return (
-      <div>
-        <h1>hi from cat generator</h1>
-        <button onClick={this.handleClick}>Click me</button>
+      <div className="breed-generator">
+        <button className="breed-button" onClick={this.handleClick}>Click me</button>
           <div> 
-            <div> 
+            <div className="breed-info"> 
               <p>Breed: { this.state.breed }</p>
               <p>Coat: { this.state.coat }</p>
               <p>Country: { this.state.country }</p>

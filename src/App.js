@@ -1,15 +1,24 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import BreedGenerator from './components/BreedGenerator';
 import FactGenerator from './components/FactGenerator'
+import Header from './components/Header';
+import Picture from './components/Picture'
+import { Route, Switch } from 'react-router-dom';
 
 
 function App() {
   return (
-    <div className="App">
-      <BreedGenerator />
-      <FactGenerator />
-    </div>
+      <>
+      <Header />
+      <Switch>
+        <Route exact path="/pics" component={Picture} />
+        <Route exact path="/breeds" component={BreedGenerator} /> 
+        <Route exact path="/facts" component={FactGenerator} /> 
+
+      </Switch>
+
+      </>
   );
 }
 

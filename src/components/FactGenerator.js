@@ -10,25 +10,27 @@ export default class componentName extends Component {
   }
 
   async handleClick() {
+    // limit is 140 according to API
     const limit = 98;
     const url = `https://catfact.ninja/fact?max_length=${limit}`;
     const response = await fetch(url)
-    const factData = await response.json();
-    console.log(factData);
-    
+    const factData = await response.json();    
+
     this.setState({
       fact: factData.fact,
     })  
+    console.log(factData);
+    
 
   }
 
 
   render() {
     return (
-      <div>
-        <h1>hi from facts</h1>
+      <div className="fact-generator">
         <button onClick={this.handleClick}>Click me for a fact</button>
-        <p>{ this.state.fact }</p>
+        <p>{ this.state.fact }</p> <br /> <br /> <br /> <br />
+        <h7>"Oooooh, what an interesting fact. I have learnt so much" - Holly, Michigan</h7>
       </div>
     )
   }

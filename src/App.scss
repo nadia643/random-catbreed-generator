@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+$background-color: #beff90;
+$header-color: #ffc590;
+$button-color: #ff9092;
+$section-color: #c7e8ff;
+
+body {
+  overflow: hidden;
+  font-family: 'ABeeZee', sans-serif;
+  background-color: $background-color;
+}
+
+.header {
+  margin: auto;
+  height: 30vh;
+  width: 95vw;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  justify-items: center;
+  align-items: end;
+  background-color: $header-color;
+  border-bottom: solid 1px slategrey;
+}
+
+.header-links {
+  margin: auto;
+  width: 95vw;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
+  justify-items: center;
+  background-color: $header-color;
+  border-top: 1px grey;
+}
+
+
+
+a {
+  text-decoration: none;  
+  color: black;  
+}
+
+p {
+  font-size: 1.8rem;
+}
+
+.header-icons {
+  grid-column: 2 / 3;
+  
+}
+
+.breed-generator {
+  background-color: $section-color;
+  margin: auto;
+  height: 90vh;
+  width: 95vw;
+  margin-top: 2rem;
+  padding-top: 2rem;
+
+}
+
+.breed-info {
+  margin-left: 38%;
+}
+
+.breed-button {
+  margin-left: 2rem;
+}
+
+.fact-generator {
+  background-color: $section-color;
+  margin: auto;
+  height: 90vh;
+  width: 93vw;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+
+button {
+  border-radius: 45%;
+  padding: 18px;
+  background-color: $button-color;
+  color: #939797;
+  text-align: center;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  transition: all .8s;
+
+  &:hover{
+    background-color: #fff;
+    color: $button-color;
+  }
+}
+
+.cat-page {
+  background-color: $section-color;
+  margin: auto;
+  height: 90vh;
+  width: 93vw;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+
+  display: grid;
+  grid-template-columns: 10% 90%;
+  column-gap: 6rem;
+  align-items: flex-start;
+}
+
+.cat-photo {
+  max-width: 600px;
+}
