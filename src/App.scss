@@ -110,3 +110,50 @@ button {
 .cat-photo {
   max-width: 600px;
 }
+
+.section-home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.section-home div {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+
+.section-home div:nth-child(1) {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+
+.section-home div:nth-child(1) h1 {
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: #fff;
+  -webkit-text-fill-color: transparent;
+  left: 100%;
+}
+
+.section-home div h1 {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 12em;
+  line-height: 80vh;
+  color: #fff;
+  animation: animate 60s linear infinite;
+
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+
+}

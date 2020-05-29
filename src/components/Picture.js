@@ -4,7 +4,7 @@ export default class Picture extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      photo: ''
+      photo: '',
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -15,7 +15,7 @@ export default class Picture extends Component {
     const pictureData = await response.json();
 
     this.setState({
-      photo: pictureData[0].url
+      photo: pictureData[0].url,
     })
     console.log(pictureData[0].url);
     
