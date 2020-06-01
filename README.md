@@ -1,4 +1,4 @@
-This project uses the CatFact.ninja API to generate random cat breeds upon click of a button.
+This project uses the CatFact.ninja API, and thecatapi.com API to generate random cat breeds, facts, and pictures upon the click of a button.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
